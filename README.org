@@ -1,0 +1,14 @@
+#+title: Readme
+
+* What this will be?
+A TUI mpd frontend similiar to ncmpcpp.
+** Why?
+Because I want to practice writing Rust code and add some functionality that my current main frontend of choice (ncmpcpp) lacks at least in my opinion.
+* Application structure
+** Interaction methods:
+- "Graphical"
+  Main tui window, something like ncmpc/ncmpcpp
+- Commands
+  Something like ncmpcpp/vim commands
+- Terminal arguments
+  For quick database updates and scripting (something like mpc).
