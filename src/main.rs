@@ -22,10 +22,17 @@ fn main() {
         match &user_prompt()[..] {
             "np" => {
                 println!(
-                    "Now Playing: {} - {} from {}",
+                    "Now Playing: {} - {} from album {}",
                     get_artist(&mut conn),
                     get_title(&mut conn),
                     get_albumname(&mut conn)
+                );
+            }
+            "i" => {
+                println!(
+                    "{}s from year {}",
+                    now_playing::get_length(&mut conn),
+                    now_playing::get_year(&mut conn)
                 );
             }
             "v" => set_volume(&mut conn),
@@ -33,6 +40,9 @@ fn main() {
             "n" => play_next(&mut conn),
             "p" => play_previous(&mut conn),
             "s" => play_pause(&mut conn),
+            "h" => {
+                println!("Available commands: \nv - set volume\nu - update mpd database\nn - play next song from queue\np - play previous song from queue\ns - toggle between playing and pause\nq - quit from the prompt")
+            }
             "q" => exit(0),
             _ => println!("Not a function"),
         }

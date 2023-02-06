@@ -1,7 +1,7 @@
 #+title: Readme
 
 * What this will be?
-A TUI mpd frontend similiar to ncmpcpp.
+A TUI mpd frontend similiar to ncmpcpp. Name is a subject to change as I have no idea how to call it right now.
 ** Why?
 Because I want to practice writing Rust code and add some functionality that my current main frontend of choice (ncmpcpp) lacks at least in my opinion.
 * Application structure
