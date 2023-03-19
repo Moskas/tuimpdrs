@@ -1,0 +1,14 @@
+#+title: Roadmap
+
+* Planned functions [0/4]
+** [ ] [#A] Improved prompt mode
+*** Ability to browse queue
+*** Ability to browse database of songs
+*** Modify and create playlists
+** [ ] [#A] Basic TUI interface
+*** Album covers support?
+** [ ] Terminal arguments
+*** mpc like commands
+*** stdin/stdout support
+* Bugs [0/1]
+** [ ] When prompt mode is open for some time it sometimes breaks from mpd and returns broken pipe on any command.
