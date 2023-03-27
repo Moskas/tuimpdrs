@@ -2,6 +2,7 @@ mod config;
 mod now_playing;
 mod prompt;
 mod songlist;
+mod status;
 use std::{
     io::{stdout, Write},
     process::exit,
@@ -12,8 +13,9 @@ use mpd::Client;
 use now_playing::{get_artist, get_title};
 use prompt::{db_update, play_next, play_previous, set_volume, user_prompt};
 use songlist::{get_queue, get_song_titles_from_queue};
+use status::get_mpd_status;
 
-use crate::{now_playing::get_albumname, prompt::play_pause};
+use crate::{now_playing::get_albumname, prompt::play_pause, status::get_length};
 
 fn main() {
     let config = get_config();
@@ -52,6 +54,8 @@ fn main() {
                         "n" => play_next(&mut conn),
                         "p" => play_previous(&mut conn),
                         "t" => play_pause(&mut conn),
+                        "s" => println!("{:?}", get_mpd_status(&mut conn)),
+                        "d" => println!("{}", get_length(get_mpd_status(&mut conn))),
                         "h" => {
                             println!(
                                 "Available commands:
